@@ -6,22 +6,26 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Adding FontAwesome 5 Free
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The intent is to show how to use FontAwesome Version 5 in an Angular 6 application with plain HTML ```<i>``` Tag and CSS (SASS) like: 
+```html
+<i class="fab fa-angular"></i>
+``` 
+e.g use it as drop in replacement for FontAwesome 4.x.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+__SASS import is the key:__
 
-## Running unit tests
+```scss
+$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@import "~bootstrap/scss/bootstrap";
 
-## Running end-to-end tests
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+// You need to load the font-face
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
